@@ -50,6 +50,8 @@
             <button>Submit</button>
         </div>
         <script>
+
+            //for name validation
             const text = document.querySelector('#text');
             const textError= document.querySelector('.text-error');
             text.addEventListener('input',function()
@@ -61,7 +63,7 @@
                 textError.textContent="Name is incorrect";
             }
             )
-
+        
             const salary=document.querySelector('#salary');
             const output=document.querySelector('.salary-output');
             salary.addEventListener('input',function()
@@ -69,7 +71,7 @@
               output.textContent=salary.value;
             }
             )
-
+            //for email validation
             const email =document.querySelector('#email');
             const emailError =document.querySelector('.email-error');
             email.addEventListener('input',function()
@@ -81,6 +83,22 @@
                 emailError.textContent = "Email is incorrect";
             }
             )
+
+            //for number validation
+            const phoneNumber = document.querySelector('#tel');
+            const phoneError = document.querySelector('.phone-error');
+            email.addEventListener('input',function()
+            {
+                let phoneRegex =RegexExp('^[0-9]{2} [0-9]{10}$')
+                if(phoneRegex.test(phoneNumber.value))
+                phoneError.textContent="";
+                else
+                phoneError.textContent="PhoneNumber is incorrect";
+                
+            }
+            )
+
+
  </script>
     </form>
     </body>
