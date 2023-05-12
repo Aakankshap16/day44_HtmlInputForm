@@ -103,11 +103,12 @@
             const password = document.querySelector('#pwd');
             const passwordError = document.querySelector('.Password-error');
             password.addEventListener('input', function() {
-                if (password.value.length >= 8)
+                let passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=?]).{8,}$/;
+                if (passwordRegex.test(password.value))
                     passwordError.textContent = "";
                 else
-                    passwordError.textContent = "Password must have a minimum of 8 characters";
-            });
+                    passwordError.textContent = "Password must have a minimum of 8 characters, at least 1 uppercase letter, 1 numeric digit, and 1 special character";
+            });  
 
 
 
